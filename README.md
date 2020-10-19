@@ -41,7 +41,7 @@ log_outでトップページに遷移
 
 
 ### 機能一覧
-スプレッドシートに記入
+https://docs.google.com/spreadsheets/d/1hNVx6lLicCT8hYl0y47f9TYJWL3xJQt_GLyEkmBosYM/edit?usp=sharing
 
 ## 開発環境
 - OS：Linux(CentOS)
@@ -57,4 +57,9 @@ gem 'jp_prefecture'
 gem 'kaminari 1.2.1'
 
 ## 使用素材
+Bookers2
 pixabay
+筋トレ ブログ | Golden Biceps
+https://golden-biceps.com/category/workout_logs/
+「筋トレ日記」- サクサク入力できる
+https://apps.apple.com/jp/app/%E7%AD%8B%E3%83%88%E3%83%AC%E6%97%A5%E8%A8%98-%E3%82%B5%E3%82%AF%E3%82%B5%E3%82%AF%E5%85%A5%E5%8A%9B%E3%81%A7%E3%81%8D%E3%82%8B/id1367302766
