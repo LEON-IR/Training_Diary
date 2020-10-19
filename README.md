@@ -60,6 +60,6 @@ gem 'kaminari 1.2.1'<br>
 Bookers2<br>
 pixabay<br>
 筋トレ ブログ | Golden Biceps<br>
-https://golden-biceps.com/category/workout_logs/
+https://golden-biceps.com/category/workout_logs/<br>
 「筋トレ日記」- サクサク入力できる<br>
 https://apps.apple.com/jp/app/%E7%AD%8B%E3%83%88%E3%83%AC%E6%97%A5%E8%A8%98-%E3%82%B5%E3%82%AF%E3%82%B5%E3%82%AF%E5%85%A5%E5%8A%9B%E3%81%A7%E3%81%8D%E3%82%8B/id1367302766
