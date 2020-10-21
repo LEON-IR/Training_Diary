@@ -42,8 +42,6 @@ log_outでトップページに遷移
 
 ### 機能一覧
 https://docs.google.com/spreadsheets/d/1hNVx6lLicCT8hYl0y47f9TYJWL3xJQt_GLyEkmBosYM/edit?usp=sharing
-WBS<br>
-https://docs.google.com/spreadsheets/d/1Qy3Roy6AmFuAWtCWU4qzcDrvnP40nzFPLGPtkP1FaVE/edit?usp=sharing
 
 ## 開発環境
 - OS：Linux(CentOS)<br>
