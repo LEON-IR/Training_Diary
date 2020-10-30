@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+
+      <h1>メニュー編集</h1>
+      <% if @menu.errors.any? %>
+        <div id="error_explanation">
+           <h3><%= pluralize(@menu.errors.count, "error") %> prohibited this obj from being saved:</h3>
+             <ul>
+               <% @menu.errors.full_messages.each do |message| %>
+                 <li><%= message %></li>
+               <% end %>
+             </ul>
+        </div>
+      <% end %>
+
+      <%= form_for(@menu) do |f| %>
+        <div class="field row">
+          <%= f.label :title %>
+          <%= f.text_field :title, class: "col-xs-12 menu_title" %>
+        </div>
+
+        <div class="field row">
+          <%= f.label :opinion %>
+          <%= f.text_area :body, class: "col-xs-12 menu_body" %>
+        </div>
+
+        <div class="actions row">
+          <%= f.submit 'Update Menu', class: "btn btn-primary col-xs-12" %>
+        </div>
+      <% end %>
+
+      <%= link_to "Show", menu_path(@menu), class: "show_#{@menu}" %>
+      <%= '|' %>
+      <%= link_to "Back", menus_path, class: "back" %>
+    </div>
+  </div>
+</div>

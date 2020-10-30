@@ -1,0 +1,54 @@
+<% if flash[:success] %>
+	<p><%= flash[:success] %></p>
+<% end %>
+
+<div class="container">
+   <div class="row">
+ 	  <div class="col-xs-3" style="background-color: white">
+
+ 	  	<%= render  'users/userinfo', user: @menu.user %>
+
+ 	  	<%= render 'new', menu: @menu_new %>
+
+ 	  </div>
+
+	    <div class="col-xs-9">
+		      <h2>メニュー詳細</h2>
+
+		      <table class="table">
+		      	<tr>
+				<td><%= link_to user_path(@menu.user) do %>
+		            <%= attachment_image_tag @menu.user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg" %>
+		            <br>
+		            <%= @menu.user.name %>
+		            <% end %>
+		        </td>
+			    <td><%= link_to menu_path(@menu) do %>
+			              <%= @menu.title %>
+			    <% end %></td>
+			    <td><span><%= @menu.body %></span></td>
+			    <td>
+			    	<%= render 'favorites/favorites_button', menu: @menu %>
+			    </td>
+                <% if current_user.id == @menu.user_id %>
+			    <td><%= link_to "Edit", edit_menu_path(@menu.id) %></td>
+			    <td><%= link_to "Destroy", menu_path(@menu.id), method: :delete %></td>
+               <% end %>
+			    </tr>
+			  </table>
+
+			  <h3>コメント</h3>
+			  <table class="table" id="comment_list">
+			  	    <%= render 'menu_comments/comments', menu_comments: @menu_comments %>
+			  </table>
+
+			  <div class="row">
+			  	    <%= form_with model:[@menu, @menu_comment], local: true do |f| %>
+			  	        <%= f.text_area :comment, class: "col-xs-10",id: "menu_comment_content" %>
+			  	        <%= f.submit '送信' %>
+			  	    <% end %>
+			  </div>
+		</div>
+	</div>
+</div>
+

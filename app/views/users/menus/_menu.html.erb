@@ -1,0 +1,8 @@
+<% if menu.user == current_user %>
+	<td>
+		<%= link_to 'Edit', edit_menu_path(menu.id), class: "btn-sm btn-success edit_menu_#{menu.id}" %>
+	</td>
+	<td>
+		<%= link_to 'Destroy', menu_path(menu.id), method: :delete, "data-confirm" => "本当に消しますか？", class: "btn-sm btn-danger destroy_menu_#{menu.id}" %>
+	</td>
+<% end %>

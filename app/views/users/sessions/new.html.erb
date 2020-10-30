@@ -1,0 +1,26 @@
+<div class="row">
+    <div class ="session1 col-xs-offset-1 col-xs-11">
+        <h3 class = "login1">会員の方はこちらからログイン</h3>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <%- flash.each do |name, msg| -%>
+            <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+          <%- end -%>
+
+        <div class="form-group col-md-9">
+          <%= f.label :"メールアドレス", class: "col-sm-4 control-label text-center" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "col-sm-8 form-control-static" %>
+        </div>
+
+        <div class="form-group col-md-9">
+          <%= f.label :"パスワード", class: "col-sm-4 control-label text-center" %>
+          <%= f.password_field :password, autofocus: true,autocomplete: "current-password", class: "col-sm-8 form-control-static" %>
+        </div>
+
+          <div class="form-group col-md-9">
+          <%= f.submit "ログイン", class: "btn btn-primary col-md-offset-4 col-md-8" %>
+          </div>
+
+        <% end %>
+        <%= render "users/shared/links" %>
+</div>
+</div>

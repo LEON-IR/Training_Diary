@@ -1,0 +1,22 @@
+<tbody>
+	<% menu_comments.each do |menu_comment| %>
+	  <tr>
+	  	<td>
+	  		<%= link_to (menu_comment.user) do %>
+	  		   <%= attachment_image_tag(menu_comment.user, :profile_image, :fill, 50, 50, fallback: "no_image.jpg") %><br>
+	  		   <%= menu_comment.user.name %>
+	  		<% end %>
+	  	</td>
+
+	  	<td>
+	  		<%= menu_comment.comment %>
+	  	</td>
+
+	  	<td>
+	  		<% if menu_comment.user_id == current_user.id %>
+	  		  <%= link_to "Destroy", menu_comment_path(menu_comment.menu, menu_comment), method: :delete, class: "btn-sm btn-danger" %>
+	  		<% end %>
+	  	</td>
+	  </tr>
+	<% end %>
+</tbody>

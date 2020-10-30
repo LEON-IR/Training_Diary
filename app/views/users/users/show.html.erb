@@ -1,0 +1,39 @@
+<body>
+
+	<% if flash[:success] %>
+	  <p><%= flash[:success] %></p>
+	<% end %>
+
+    <div class="container">
+    	<div class="row">
+    		<div class="col-xs-3">
+    			<%= render  'users/userinfo', user: @user %>
+
+                <%= render 'menus/new', menu: @menu %>
+    		</div>
+
+    		<div class="col-xs-9">
+    	<h2>メニュー詳細</h2>
+
+    	<table class="table table-striped">
+    		<thead>
+    			<tr>
+    				<th></th>
+    				<th>Title</th>
+    				<th>Opinion</th>
+    			</tr>
+    		</thead>
+    		<tbody>
+    			<% @menus.each do |book| %>
+    			  <tr class="new table">
+    			  	<td><span><%= attachment_image_tag book.user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg" %></span></td>
+    			  	<td><span><%= link_to menu.title, menu, class: "menus_#{menu.id}" %></span> </td>
+    			  	<td><span><%= menu.body %></span></td>
+    			  </tr>
+    			<% end %>
+    		</tbody>
+    	</table>
+    </div>
+    </div>
+</div>
+

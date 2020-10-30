@@ -1,0 +1,15 @@
+<% if menu.favorited_by?(current_user) %>
+<li>
+  <%= link_to menu_favorites_path(menu), method: :delete do %>
+    <i class="glyphicon glyphicon-heart" aria-hidden="true" style="color: red;"></i>
+    <%= menu.favorites.count %>いいね
+  <% end %>
+</li>
+<% else %>
+<li>
+  <%= link_to menu_favorites_path(menu), method: :post do %>
+    <i class="glyphicon glyphicon-heart" aria-hidden="true"></i>
+    <%= menu.favorites.count %>いいね
+  <% end %>
+</li>
+<% end %>
