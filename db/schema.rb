@@ -41,14 +41,16 @@ ActiveRecord::Schema.define(version: 2020_10_29_111006) do
   create_table "menu_comments", force: :cascade do |t|
     t.text "comment"
     t.integer "user_id"
+    t.integer "menu_id"
     t.integer "profile_image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "menus", force: :cascade do |t|
-    t.integer "genre_id", null: false
-    t.string "name", null: false
+    t.integer "genre_id"
+    t.integer "user_id", null: false
+    t.string "name"
     t.string "title", null: false
     t.integer "body", null: false
     t.boolean "is_active", default: true, null: false

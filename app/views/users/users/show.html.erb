@@ -7,9 +7,9 @@
     <div class="container">
     	<div class="row">
     		<div class="col-xs-3">
-    			<%= render  'users/userinfo', user: @user %>
+    			<%= render  '/users/users/userinfo', user: @user %>
 
-                <%= render 'menus/new', menu: @menu %>
+                <%= render '/users/menus/new', menu: @menu %>
     		</div>
 
     		<div class="col-xs-9">
@@ -24,9 +24,9 @@
     			</tr>
     		</thead>
     		<tbody>
-    			<% @menus.each do |book| %>
+    			<% @menus.each do |menu| %>
     			  <tr class="new table">
-    			  	<td><span><%= attachment_image_tag book.user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg" %></span></td>
+    			  	<td><span><%= attachment_image_tag menu.user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg" %></span></td>
     			  	<td><span><%= link_to menu.title, menu, class: "menus_#{menu.id}" %></span> </td>
     			  	<td><span><%= menu.body %></span></td>
     			  </tr>

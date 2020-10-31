@@ -35,9 +35,9 @@ Rails.application.routes.draw do
 	      patch '/detailupdate' => 'users#update', as: :update
 	    end
 
-		resources :menus, only: [:create, :index, :show, :edit, :update, :destroy] do
+		resources :menus, only: [:new, :create, :index, :show, :edit, :update, :destroy] do
 			resource :favorites, only: [:create, :destroy]
-			resources :comments, only: [:create, :destroy]
+			resources :menu_comments, only: [:create, :destroy]
 		end
 	end
 

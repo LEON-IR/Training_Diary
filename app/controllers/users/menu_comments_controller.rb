@@ -1,9 +1,9 @@
-class Users::MenusCommentsController < ApplicationController
+class Users::MenuCommentsController < ApplicationController
 
 	before_action :authenticate_user!
 
 	def create
-	  	menu = menu.find(params[:menu_id])
+	  	menu = Menu.find(params[:menu_id])
 	    comment = current_user.menu_comments.new(menu_comment_params)
 	    comment.menu_id = menu.id
 	    comment.save

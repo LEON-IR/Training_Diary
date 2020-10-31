@@ -6,9 +6,9 @@
    <div class="row">
  	  <div class="col-xs-3" style="background-color: white">
 
- 	  	<%= render  'users/userinfo', user: @menu.user %>
+ 	  	<%= render  '/users/users/userinfo', user: @menu.user %>
 
- 	  	<%= render 'new', menu: @menu_new %>
+ 	  	<%= render '/users/menus/new', menu: @menu_new %>
 
  	  </div>
 
@@ -20,7 +20,7 @@
 				<td><%= link_to user_path(@menu.user) do %>
 		            <%= attachment_image_tag @menu.user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg" %>
 		            <br>
-		            <%= @menu.user.name %>
+		            <%= @menu.user.last_name %><%= @menu.user.first_name %>
 		            <% end %>
 		        </td>
 			    <td><%= link_to menu_path(@menu) do %>
@@ -28,7 +28,7 @@
 			    <% end %></td>
 			    <td><span><%= @menu.body %></span></td>
 			    <td>
-			    	<%= render 'favorites/favorites_button', menu: @menu %>
+			    	<%= render '/users/favorites/favorites_button', menu: @menu %>
 			    </td>
                 <% if current_user.id == @menu.user_id %>
 			    <td><%= link_to "Edit", edit_menu_path(@menu.id) %></td>
@@ -39,11 +39,11 @@
 
 			  <h3>コメント</h3>
 			  <table class="table" id="comment_list">
-			  	    <%= render 'menu_comments/comments', menu_comments: @menu_comments %>
+			  	    <%= render '/users/menus_comments/comments', menu_comments: @menu_comments %>
 			  </table>
 
 			  <div class="row">
-			  	    <%= form_with model:[@menu, @menu_comment], local: true do |f| %>
+			  	    <%= form_with model:[@menu, @menu_comment], url:menu_menu_comments_path(@menu), local: true do |f| %>
 			  	        <%= f.text_area :comment, class: "col-xs-10",id: "menu_comment_content" %>
 			  	        <%= f.submit '送信' %>
 			  	    <% end %>

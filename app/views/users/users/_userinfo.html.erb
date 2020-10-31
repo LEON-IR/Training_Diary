@@ -5,18 +5,18 @@
 
                         <tbody>
                             <tr>
-                                <td><strong>name</strong></td>
+                                <td><strong>名前</strong></td>
                                 <td><strong><%= user.last_name %><%= user.first_name %></strong></td>
                             </tr>
                             <tr>
-                                <td><strong>introduction</strong></td>
+                                <td><strong>紹介文</strong></td>
                                 <td><strong><%= user.introduction %></strong></td>
                             </tr>
                             <tr>
-                                <td><p>follows<%= link_to user.followings.count, follows_user_path(user) %></p></td>
+                                <td><p>フォロー数<%= link_to user.followings.count, follows_user_path(user) %></p></td>
                             </tr>
                             <tr>
-                                <td><p>followers<%= link_to user.followers.count, followers_user_path(user) %></p>
+                                <td><p>フォロワー数<%= link_to user.followers.count, followers_user_path(user) %></p>
                                 </td>
                             </tr>
                             <tr>

@@ -1,11 +1,11 @@
 <h2>メニュー新規投稿</h2>
 <%= form_for(menu) do |f| %>
 	<div class="field row">
-		<%= f.label :title %>
+		<%= f.label :"タイトル" %>
 		<%= f.text_field :title, class: "col-xs-12 menu_title text" %>
 	</div>
 	<div class="field row">
-		<%= f.label :Opinion %>
+		<%= f.label :"内容" %>
 		<%= f.text_area :body, class: "col-xs-12 menu_body text" %>
 	</div>
 	<div class="actions row">

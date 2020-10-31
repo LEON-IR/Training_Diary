@@ -5,9 +5,9 @@ class Users::MenusController < ApplicationController
 
     def show
 		@menu = Menu.find(params[:id])
-		@user = @book.user
+		@user = @menu.user
 		@menus = Menu.all
-		@menu_new = menu.new
+		@menu_new = Menu.new
 		@menu_comments = @menu.menu_comments
 		@menu_comment = MenuComment.new
 	end
@@ -15,7 +15,7 @@ class Users::MenusController < ApplicationController
 	def create
 		@menu = Menu.new(menu_params)
 		@menu.user_id = current_user.id
-		if@menu.save
+		if @menu.save
 			flash[:success] = "メニューの登録に成功しました"
 			redirect_to menu_path(@menu.id)
 		else
