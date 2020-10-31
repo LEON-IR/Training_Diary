@@ -16,12 +16,12 @@
 
       <%= form_for(@menu) do |f| %>
         <div class="field row">
-          <%= f.label :title %>
+          <%= f.label :"トレーニング種目" %>
           <%= f.text_field :title, class: "col-xs-12 menu_title" %>
         </div>
 
         <div class="field row">
-          <%= f.label :opinion %>
+          <%= f.label :"トレーニング内容" %>
           <%= f.text_area :body, class: "col-xs-12 menu_body" %>
         </div>
 

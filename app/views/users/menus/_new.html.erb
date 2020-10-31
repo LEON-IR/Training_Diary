@@ -1,11 +1,11 @@
 <h3>筋トレメニュー投稿</h3>
 <%= form_for(menu) do |f| %>
 	<div class="field row">
-		<%= f.label :"タイトル" %>
+		<%= f.label :"トレーニング種目" %>
 		<%= f.text_field :title, class: "col-xs-12 menu_title text" %>
 	</div>
 	<div class="field row">
-		<%= f.label :"内容" %>
+		<%= f.label :"トレーニング内容" %>
 		<%= f.text_area :body, class: "col-xs-12 menu_body text" %>
 	</div>
 	<div class="actions row">
