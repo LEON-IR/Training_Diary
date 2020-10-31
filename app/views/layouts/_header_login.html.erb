@@ -1,0 +1,17 @@
+<li class="users_name">ようこそ、<%= current_user.last_name %><%= current_user.first_name %>さん！</li>
+
+<li class="">
+   <%= link_to 'ホーム', user_path(current_user) %>
+</li>
+
+<li class="">
+   <%= link_to 'ユーザー一覧', users_path%>
+</li>
+
+<li class="">
+   <%= link_to '筋トレメニュー', menus_path %>
+</li>
+
+<li class="">
+   <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+</li>
