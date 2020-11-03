@@ -38,6 +38,7 @@ Rails.application.routes.draw do
 		resources :menus, only: [:new, :create, :index, :show, :edit, :update, :destroy] do
 			resource :favorites, only: [:create, :destroy]
 			resources :menu_comments, only: [:create, :destroy]
+			  get "search" => "menus#search"
 		end
 	end
 

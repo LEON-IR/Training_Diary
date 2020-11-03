@@ -1,0 +1,41 @@
+ja:
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
+
+ja:
+  views:
+    pagination:
+      first: "&laquo; 最初"
+      last: "最後 &raquo;"
+      previous: "&lsaquo; 前"
+      next: "次 &rsaquo;"
+      truncate: "..."
+
+ja:
+  views:
+    pagination:
+      first: <i class="fas fa-angle-double-left"></i>
+      last: <i class="fas fa-angle-double-right"></i>
+      previous: <i class="fas fa-angle-left"></i>
+      next: <i class="fas fa-angle-right"></i>
+      truncate: "..."
+
+ja:
+  activerecord:
+    models:
+      user:
+      menu:
+    attributes:
+      user:
+        mail: メールアドレス
+        password: パスワード
+        last_name: 姓
+        first_name: 名
+        last_name_kana: 姓カナ
+        first_name_kana: 名カナ
+        postcode: 郵便番号
+        address: 住所
+        tel: 電話番号
+        password_confirmation: 確認用パスワード
+        remember_me: 次回から自動的にログイン

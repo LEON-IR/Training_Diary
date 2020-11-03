@@ -4,14 +4,14 @@
     　 <%= form_with(model:@user, local: true ,method: :patch) do |f| %>
 
     <% if @user.errors.any? %>
-    <div>
-      <h4><%= @user.errors.count %>件のエラーが発生しました。</h4>
-      <ul>
-        <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
+      <div>
+        <h4><%= @user.errors.count %>件のエラーが発生しました。</h4>
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
     <% end %>
     <div class="row">
       <div class="col-xs-10 edit-list">

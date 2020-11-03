@@ -25,7 +25,7 @@ class Users::MenusController < ApplicationController
 	end
 
 	def index
-		@menus = Menu.all
+		@menus = Menu.all.page(params[:page]).reverse_order
 		@menu = Menu.new
 	end
 
@@ -65,6 +65,9 @@ class Users::MenusController < ApplicationController
 		if current_user.id != @menu.user_id
            redirect_to menus_path
        end
+    end
+
+    def search
     end
 
 end

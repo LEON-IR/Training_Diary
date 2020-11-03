@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col-xs-5 col-xs-offset-1">
+<h1 class="page-title pick-up-title">
+  <%= @user.last_name %>
+  <%= @user.first_name %>
+  さんの会員詳細
+</h1>
+
+<table class="table">
+  <tr>
+    <td class="table-left">会員ID</td>
+    <td><%= @user.id %></td>
+    <td>
+      <% if @user.is_deleted == false %>
+          <span class="status-true">有効会員</span>
+        <% else %>
+          <span class="status-false">退会済会員</span>
+        <% end %>
+    </td>
+  </tr>
+  <tr>
+    <td class="table-left">氏名</td>
+    <td><%= @user.last_name %> <%= @user.first_name %></td>
+    <td>
+  </tr>
+  <tr>
+    <td class="table-left">フリガナ</td>
+    <td><%= @user.last_name_kana %> <%= @user.first_name_kana %></td>
+  </tr>
+  <tr>
+    <td class="table-left">郵便番号</td>
+    <td><%= @user.postcode %></td>
+  </tr>
+  <tr>
+    <td class="table-left">住所</td>
+    <td><%= @user.address %></td>
+  </tr>
+  <tr>
+    <td class="table-left">電話番号</td>
+    <td><%= @user.tel %></td>
+  </tr>
+  <tr>
+    <td class="table-left">メールアドレス</td>
+    <td><%= @user.email %></td>
+  </tr>
+</table>
+
+<span class="link-hover"><%= link_to "編集する", edit_admins_user_path(@user), class: "btn btn-primary" %></span>
+</div>

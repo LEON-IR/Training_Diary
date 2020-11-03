@@ -3,7 +3,7 @@
 <h2 class="passedit">パスワード変更画面</h2>
 
 <div class="form-group col-md-9">
-    <%= f.label :"新しいパスワード" ,class: "col-sm-4 control-label text-center"%> 
+    <%= f.label :"新しいパスワード" ,class: "col-sm-4 control-label text-center"%>
     <%= f.password_field :password, autocomplete: "new-password",class: "col-sm-8 form-control-static" %>
     <% if @minimum_password_length %>
 
@@ -16,7 +16,7 @@
   </div>
 
   <div class="form-group col-md-9">
-    <%= f.label :"現在のパスワード" ,class: "col-sm-4 control-label text-center"%> 
+    <%= f.label :"現在のパスワード" ,class: "col-sm-4 control-label text-center"%>
     <%= f.password_field :current_password, autocomplete: "current-password" ,class: "col-sm-8 form-control-static" %>
   </div>
 

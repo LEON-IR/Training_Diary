@@ -5,7 +5,7 @@ class CreateMenus < ActiveRecord::Migration[5.2]
       t.integer :user_id, null: false
     	t.string :name
     	t.string :title, null: false
-    	t.integer :body, null: false
+    	t.string :body, null: false
     	t.boolean :is_active,default:true, null: false
 
       t.timestamps

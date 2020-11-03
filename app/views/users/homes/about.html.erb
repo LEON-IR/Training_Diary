@@ -1,1 +1,31 @@
-<h1>About</h1>
+<div class="text-center">
+	<h2>ようこそTraining diaryへ！</h2>
+	<h4>こちらはその日に行ったトレーニングメニューの記録を保存でき、<br>トレーニングメニューを仲間と共有してコメントを残してもらったり、<br>
+	評価してもらえるECサイトとなっております。
+	</h4>
+</div>
+
+<section class="regular slider">
+    <div align="center"><%= image_tag "dumbbell.jpg" %></div>
+    <div align="center"><%= image_tag "legpress.jpg" %></div>
+    <div align="center"><%= image_tag "weights-1.jpg" %></div>
+    <div align="center"><%= image_tag "weights-2.jpg" %></div>
+    <div align="center"><%= image_tag "squat.jpg" %></div>
+    <div align="center"><%= image_tag "fitness-2.jpg"%></div>
+    <div align="center"><%= image_tag "berbell.jpg" %></div>
+    <div align="center"><%= image_tag "free-weight.jpg" %></div>
+    <div align="center"><%= image_tag "machines.jpg" %></div>
+</section>
+
+<script type="text/javascript">
+	$(document).on('turbolinks:load', function() {
+    $(".regular").slick({
+        dots: true,
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+      });
+	});
+</script>

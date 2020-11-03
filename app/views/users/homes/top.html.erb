@@ -1,1 +1,26 @@
-<h1>TOP</h1>
+<section class="regular slider top-slider">
+    <div align="center"><%= image_tag "gym.jpg" %></div>
+    <div align="center"><%= image_tag "machines.jpg" %></div>
+    <div align="center"><%= image_tag "muscle.jpg" %></div>
+    <div align="center"><%= image_tag "people.jpg" %></div>
+    <div align="center"><%= image_tag "training.jpg" %></div>
+    <div align="center"><%= image_tag "fitness-2.jpg"%></div>
+    <div align="center"><%= image_tag "girl-in-the-gym.jpg" %></div>
+    <div align="center"><%= image_tag "plank.jpg" %></div>
+    <div align="center"><%= image_tag "berbell.jpg" %></div>
+    <div align="center"><%= image_tag "free-weight.jpg" %></div>
+    <div align="center"><%= image_tag "machines.jpg" %></div>
+</section>
+
+<script type="text/javascript">
+    $(document).on('ready', function() {
+      $(".regular").slick({
+        dots: true,
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+      });
+    });
+</script>

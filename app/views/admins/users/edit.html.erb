@@ -1,0 +1,63 @@
+<div class="row">
+  <div class="col-xs-6 col-xs-offset-1">
+    <h1 class="page-title">
+      <%= User.find(params[:id]).last_name %>
+      <%= User.find(params[:id]).first_name %>
+      さんの会員情報編集
+    </h1>
+
+    <table class="table">
+      <%= form_for(@user, url:admins_user_path(@user)) do |f| %>
+      <% if @user.errors.any? %>
+      <div>
+        <h4><%= @user.errors.count %>件のエラーが発生しました。</h4>
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
+
+      <tr>
+        <td class="table-left">会員ID</td>
+        <td><%= @user.id %></td>
+      </tr>
+      <tr>
+        <td class="table-left">氏名</td>
+        <td><%= f.text_field :last_name %> <%= f.text_field :first_name %></td>
+      </tr>
+      <tr>
+        <td class="table-left">フリガナ</td>
+        <td><%= f.text_field :last_name_kana %> <%= f.text_field :first_name_kana %></td>
+      </tr>
+      <tr>
+        <td class="table-left">郵便番号</td>
+        <td><%= f.text_field :postcode %></td>
+      </tr>
+      <tr>
+        <td class="table-left">住所</td>
+        <td><%= f.text_field :address, size:60 %></td>
+      </tr>
+      <tr>
+        <td class="table-left">電話番号</td>
+        <td><%= f.text_field :tel %></td>
+      </tr>
+      <tr>
+        <td class="table-left">メールアドレス</td>
+        <td><%= f.text_field :email, autocomplete: "email" %></td>
+      </tr>
+      <tr>
+        <td class="table-left">会員ステータス</td>
+        <td>
+          <%= f.radio_button :is_deleted, :false %>
+          <%= f.label :is_deleted_false, "有効" %>
+          <%= f.radio_button :is_deleted, :true %>
+          <%= f.label :is_deleted_true, "退会済み" %>
+        </td>
+      </tr>
+    </table>
+    <span class="link-hover"><%= f.submit "変更を保存する" , class: "btn btn-primary" %></span>
+    <% end %>
+  </div>
+</div>

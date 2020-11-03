@@ -1,16 +1,16 @@
 <div class='container'>
 <div class="row">
   <div class="col-xs-3" style="background-color: white">
-<% if @menu.errors.any? %>
-   <div id="error_explanation">
-    <h3><%= pluralize(@menu.errors.count, "error") %> prohibited this obj from being saved:</h3>
-      <ul>
-        <% @menu.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-<% end %>
+    <% if @menu.errors.any? %>
+      <div>
+        <h4><%= @menu.errors.count %>件のエラーが発生しました。</h4>
+        <ul>
+          <% @menu.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
     <%= render '/users/users/userinfo', user: current_user %>
 
@@ -27,27 +27,32 @@
                 <th></th>
                 <th>トレーニング種目</th>
                 <th>トレーニング内容</th>
+                <th>投稿日時</th>
               </tr>
             </thead>
 
             <tbody>
-            <% @menus.each do |menu| %>
-            <tr class="new table">
-              <td><%= link_to user_path(menu.user_id) do %>
-                <%= attachment_image_tag menu.user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg" %><% end %></td>
-              <td><span><%= link_to menu.title, menu, class: "menus_#{menu.id}" %></span> </td>
-              <td><span><%= menu.body %></span></td>
+                <% @menus.each do |menu| %>
+                <tr class="new table">
+                  <td><%= link_to user_path(menu.user_id) do %>
+                    <%= attachment_image_tag menu.user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg" %><% end %></td>
+                  <td><span><%= link_to menu.title, menu, class: "menus_#{menu.id}" %></span> </td>
+                  <td><span><%= menu.body %></span></td>
+                  <td><span><%= menu.created_at.strftime("%Y-%m-%d %H:%M") %></span></td>
 
-              <td>
-                <%= render '/users/favorites/favorites_button', menu: menu %>
-              </td>
+                  <td>
+                    <%= render '/users/favorites/favorites_button', menu: menu %>
+                  </td>
 
-              <td>コメント数 : <span id="menu_comments_count"><%= menu.menu_comments.count %></span></td>
-            </tr>
-          <% end %>
+                  <td>コメント数 : <span id="menu_comments_count"><%= menu.menu_comments.count %></span></td>
                 </tr>
+              <% end %>
              </tbody>
     </table>
+
+    <nav>
+      <%= paginate @menus %>
+    </nav>
   </div>
 </div>
 </div>

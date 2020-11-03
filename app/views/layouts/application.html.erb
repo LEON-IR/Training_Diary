@@ -5,29 +5,34 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
   </head>
 
   <body>
-    <div class="container">
-      <div class="row">
-        <header class="navbar">
+    <header class="navbar navbar-inverse">
           <nav class="nav navbar-nav navbar-left ">
             <%= link_to root_path do %>
-               <span>Training diary</span>
+               <%= image_tag "logo.jpg", :size =>'300x80' %>
             <% end %>
           </nav>
           <nav>
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right" style="margin-top: 20px;">
               <% if user_signed_in? %>
                 <%= render "layouts/header_login" %>
               <% else %>
+                <%# if admin_signed_in? %>
+                  <%#= render "layouts/header_admin" %>
+                <%# else %>
                 <%= render "layouts/header_no_login" %>
               <% end %>
             </ul>
           </nav>
         </header>
+    <div class="container">
+      <div class="row">
       </div>
     </div>
     <%= yield %>

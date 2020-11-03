@@ -41,8 +41,12 @@ class User < ApplicationRecord
         validates :last_name, presence: true, uniqueness: true,
                             length: {minimum: 2,maximum: 20}
         validates :first_name, presence: true, uniqueness: true,
-                            length: {minimum: 2,maximum: 20}
+                            length: {minimum: 1,maximum: 20}
 
         validates :introduction, length: {maximum: 50}
+
+        validates :postcode, format: { with: /\A\d{7}\z/ }
+        validates :tel, format: { with: /\A\d{10,11}\z/ }
+        validates :last_name, :first_name, :address, presence: true
 
 end

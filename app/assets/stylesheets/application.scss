@@ -17,5 +17,61 @@
 @import "bootstrap";
 
 .user_name {
-	padding: 15px;
+	margin-top: 10px;
+}
+
+.header {
+	width: 100%;
+}
+
+html, body {
+	margin: o;
+	padding: 0;
+}
+
+*{
+	box-sizing: border-box;
+}
+
+.slider {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.top-slider {
+	margin-top: -18px;
+}
+
+.slick-slide {
+    margin: 0px 20px;
+}
+
+.slick-slide img {
+    width: 50%;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: black;
+}
+
+.slick-slide {
+    transition: all ease-in-out .3s;
+    opacity: .2;
+}
+
+.slick-active {
+    opacity: .5;
+}
+
+.slick-current {
+    opacity: 1;
+}
+
+.slider img{
+	width: 100%;
+}
+
+.slider{
+	width: 100%;
 }
