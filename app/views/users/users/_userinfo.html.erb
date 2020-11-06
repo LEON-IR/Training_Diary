@@ -13,10 +13,10 @@
                                 <td><strong><%= user.introduction %></strong></td>
                             </tr>
                             <tr>
-                                <td><p>フォロー数<%= link_to user.followings.count, follows_user_path(user) %></p></td>
+                                <td><p>フォロー数<%= link_to user.followings.count, follows_user_relationships_path(user) %></p></td>
                             </tr>
                             <tr>
-                                <td><p>フォロワー数<%= link_to user.followers.count, followers_user_path(user) %></p>
+                                <td><p>フォロワー数<%= link_to user.followers.count, followers_user_relationships_path(user) %></p>
                                 </td>
                             </tr>
                             <tr>
@@ -33,5 +33,7 @@
                         </tbody>
                       </table>
 <div class="row">
+    <% if current_user == user %>
     <%= link_to '', edit_user_path(current_user.id), class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench edit_user_#{current_user.id}" %>
+    <% end %>
 </div>

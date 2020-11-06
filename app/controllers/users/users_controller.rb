@@ -9,7 +9,7 @@ class Users::UsersController < ApplicationController
 	end
 
 	def show
-		@user = current_user
+		@user = User.find(params[:id])
 		@menus = @user.menus
 		@menu = Menu.new
 	end
@@ -33,6 +33,9 @@ class Users::UsersController < ApplicationController
 	end
 
 	def unsubscribe
+		@user = User.find(current_user.id)
+		@user.destroy
+		redirect_to root_path
 	end
 
 	def withdraw

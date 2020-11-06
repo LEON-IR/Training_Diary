@@ -36,9 +36,9 @@
 						<td>
 							<%= user.last_name %><%= user.first_name %>
 						</td>
-                        <td><p>フォロー数:<%= link_to user.followings.count, follows_user_path(user) %></p>
+                        <td><p>フォロー数:<%= link_to user.followings.count, follows_user_relationships_path(user) %></p>
                         </td>
-                        <td><p>フォロワー数:<%= link_to user.followers.count, followers_user_path(user) %></p>
+                        <td><p>フォロワー数:<%= link_to user.followers.count, followers_user_relationships_path(user) %></p>
                         </td>
                         <td>
                         	<% if current_user != user %>
@@ -56,7 +56,7 @@
 				<% end %>
 			</tbody>
 		</table>
-		<nav>
+	<nav>
       <%= paginate @users %>
     </nav>
 	</div>

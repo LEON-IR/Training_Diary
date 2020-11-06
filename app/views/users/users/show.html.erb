@@ -13,27 +13,28 @@
     		</div>
 
     		<div class="col-xs-9">
-    	<h2>メニュー詳細</h2>
+        	    <h2>メニュー詳細</h2>
 
-    	<table class="table table-striped">
-    		<thead>
-    			<tr>
-    				<th></th>
-    				<th>トレーニング種目</th>
-    				<th>トレーニング内容</th>
-    			</tr>
-    		</thead>
-    		<tbody>
-    			<% @menus.each do |menu| %>
-    			  <tr class="new table">
-    			  	<td><span><%= attachment_image_tag menu.user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg" %></span></td>
-    			  	<td><span><%= link_to menu.title, menu, class: "menus_#{menu.id}" %></span> </td>
-    			  	<td><span><%= menu.body %></span></td>
-    			  </tr>
-    			<% end %>
-    		</tbody>
-    	</table>
-    </div>
+            	<table class="table table-striped">
+            		<thead>
+            			<tr>
+            				<th></th>
+            				<th>トレーニング種目</th>
+            				<th>トレーニング内容</th>
+            			</tr>
+            		</thead>
+            		<tbody>
+            			<% @menus.each do |menu| %>
+            			  <tr class="new table">
+            			  	<td><span><%= attachment_image_tag menu.user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg" %></span></td>
+            			  	<td><span><%= link_to menu.title, menu, class: "menus_#{menu.id}" %></span> </td>
+            			  	<td><span><%= menu.body %></span></td>
+            			  </tr>
+            			<% end %>
+            		</tbody>
+            	</table>
+            </div>
+        </div>
     </div>
 </div>
 

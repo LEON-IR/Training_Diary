@@ -15,30 +15,26 @@ Rails.application.routes.draw do
 	get 'userinfos/new'
 
 	root 'users/homes#top'
-	  # resources :users, only: [:index, :show, :edit, :update] do
-	  # resource :relationships, only: [:create, :destroy]
-	  # 	get :follows, on: :member
-	  # 	get :followers, on: :member
-	  # end
 
 	scope module: :users do
-	  resources :users, only: [:index, :show, :edit, :update] do
-	  resource :relationships, only: [:create, :destroy]
-	  	get :follows, on: :member
-	  	get :followers, on: :member
-	  end
-		resource :users, only: [:show] do
-	      get '/unsubscribe' => "users#unsubscribe"
+	    resources :users, only: [:index, :show, :edit, :update] do
+	      member do
+	  	    get :unsubscribe
+	  	  end
 	      patch '/withdraw' => "users#withdraw"
 
 	      get '/detailedit' => 'users#edit', as: :edit
 	      patch '/detailupdate' => 'users#update', as: :update
-	    end
+		  resource :relationships, only: [:create, :destroy] do
+		  	get :follows, on: :member
+		  	get :followers, on: :member
+		  end
+		end
 
 		resources :menus, only: [:new, :create, :index, :show, :edit, :update, :destroy] do
-			resource :favorites, only: [:create, :destroy]
-			resources :menu_comments, only: [:create, :destroy]
-			  get "search" => "menus#search"
+		  resource :favorites, only: [:create, :destroy]
+		  resources :menu_comments, only: [:create, :destroy]
+		  get "search" => "menus#search"
 		end
 	end
 

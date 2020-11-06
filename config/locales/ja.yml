@@ -1,4 +1,23 @@
 ja:
+  activerecord:
+    models:
+      user:
+      menu:
+    attributes:
+      user:
+        mail: メールアドレス
+        password: パスワード
+        last_name: 姓
+        first_name: 名
+        last_name_kana: 姓カナ
+        first_name_kana: 名カナ
+        postcode: 郵便番号
+        address: 住所
+        tel: 電話番号
+        password_confirmation: 確認用パスワード
+        remember_me: 次回から自動的にログイン
+
+ja:
   time:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
@@ -21,21 +40,3 @@ ja:
       next: <i class="fas fa-angle-right"></i>
       truncate: "..."
 
-ja:
-  activerecord:
-    models:
-      user:
-      menu:
-    attributes:
-      user:
-        mail: メールアドレス
-        password: パスワード
-        last_name: 姓
-        first_name: 名
-        last_name_kana: 姓カナ
-        first_name_kana: 名カナ
-        postcode: 郵便番号
-        address: 住所
-        tel: 電話番号
-        password_confirmation: 確認用パスワード
-        remember_me: 次回から自動的にログイン
