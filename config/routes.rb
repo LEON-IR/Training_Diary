@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 	get 'userinfos/new'
 
 	root 'users/homes#top'
+    get 'user_edit2' => "users#update"
 
 	scope module: :users do
 	    resources :users, only: [:index, :show, :edit, :update] do

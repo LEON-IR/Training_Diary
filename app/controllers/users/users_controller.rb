@@ -47,24 +47,14 @@ class Users::UsersController < ApplicationController
 	end
 
 	def user_params
-		params.require(:user).permit(:last_name, :first_name, :last_name_kana, :first_name_kana, :post_code, :prefecture_code, :address_city, :address_street, :tel)
+		params.require(:user).permit(:last_name, :first_name, :last_name_kana, :first_name_kana, :post_code, :address, :tel, :introduction)
 	end
 
 	def correct_user
-	    @user = User.find(params[:id])
+	    @user = User.find(params[:user_id])
 	    if current_user.id != @user.id
 	        redirect_to user_path(current_user.id)
 	    end
-	end
-
-	def follows
-	    user = User.find(params[:id])
-	    @users = user.followings
-	end
-
-	def followers
-	    user = User.find(params[:id])
-	    @users = user.followers
 	end
 
 end
