@@ -21,7 +21,7 @@ class Users::UsersController < ApplicationController
 	def update
 		@user = User.find(current_user.id)
 		if @user.update(user_params)
-			redirect_to users_path(@user)
+			redirect_to user_path(@user)
 			flash[:success] = "ユーザーのアップデートに成功しました"
 		else
 			render :edit
@@ -47,7 +47,7 @@ class Users::UsersController < ApplicationController
 	end
 
 	def user_params
-		params.require(:user).permit(:last_name, :first_name, :last_name_kana, :first_name_kana, :post_code, :address, :tel, :introduction)
+		params.require(:user).permit(:last_name, :first_name, :last_name_kana, :first_name_kana, :post_code, :address, :tel, :introduction, :profile_image)
 	end
 
 	def correct_user

@@ -21,6 +21,7 @@
             				<th></th>
             				<th>トレーニング種目</th>
             				<th>トレーニング内容</th>
+                            <th>投稿日時</th>
             			</tr>
             		</thead>
             		<tbody>
@@ -29,6 +30,7 @@
             			  	<td><span><%= attachment_image_tag menu.user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg" %></span></td>
             			  	<td><span><%= link_to menu.title, menu, class: "menus_#{menu.id}" %></span> </td>
             			  	<td><span><%= menu.body %></span></td>
+                            <td><span><%= menu.created_at.strftime("%Y-%m-%d %H:%M") %></span></td>
             			  </tr>
             			<% end %>
             		</tbody>

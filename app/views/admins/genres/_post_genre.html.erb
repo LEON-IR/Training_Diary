@@ -1,0 +1,13 @@
+<%= form_with(model:genre, url: path) do |f| %>
+
+  <div class="box-top">
+    <%= f.label :genre, "ジャンル"%>
+      <%= f.text_field :name, class:"genre_new"  %>
+      <%= f.radio_button :is_active, :true,{:checked => true} %>
+      <%= f.label :true,"有効" %>
+      <%= f.radio_button :is_active, :false %>
+      <%= f.label :false,"無効" %>
+    <span class="link-hover"><%= f.submit  genre.new_record? ? "追加" : "変更を保存する" ,class: "btn btn-info" %></span>
+  </div>
+<% end %>
+

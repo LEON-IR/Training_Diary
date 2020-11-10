@@ -10,8 +10,3 @@
   <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete %>
 </li>
 
-<div class="text-right">
-  <%= form_tag(admins_search_path, method: :get) do %>
-    <%= text_field_tag 'search[content]', '', placeholder: "Search" %>
-  <% end %>
-</div>

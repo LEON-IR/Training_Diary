@@ -38,10 +38,8 @@ class User < ApplicationRecord
 
         attachment :profile_image, destroy: false
 
-        validates :last_name, presence: true, uniqueness: true,
-                            length: {minimum: 2,maximum: 20}
-        validates :first_name, presence: true, uniqueness: true,
-                            length: {minimum: 1,maximum: 20}
+        validates :last_name, presence: true,length: {minimum: 2,maximum: 20}
+        validates :first_name, presence: true,length: {minimum: 1,maximum: 20}
 
         validates :introduction, length: {maximum: 50}
 

@@ -14,7 +14,7 @@
 
 	  	<td>
 	  		<% if menu_comment.user_id == current_user.id %>
-	  		  <%= link_to "Destroy", menu_menu_comment_path(menu_comment.menu, menu_comment), method: :delete, class: "btn-sm btn-danger" %>
+	  		  <%= link_to "Destroy", menu_menu_comment_path(menu_comment.menu, menu_comment), method: :delete, "data-confirm" => "本当に消しますか？", class: "btn-sm btn-danger" %>
 	  		<% end %>
 	  	</td>
 	  </tr>

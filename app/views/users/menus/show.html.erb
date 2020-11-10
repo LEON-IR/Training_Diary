@@ -13,6 +13,9 @@
  	  </div>
 
 	    <div class="col-xs-9">
+	    	<div class="genre-search col-xs-2">
+              <%#= render "/users/menus/genre_search", genres:@genres, menus: @menus %>
+            </div>
 		      <h2>メニュー詳細</h2>
 
 		      <table class="table">
@@ -31,8 +34,8 @@
 			    	<%= render '/users/favorites/favorites_button', menu: @menu %>
 			    </td>
                 <% if current_user.id == @menu.user_id %>
-			    <td><%= link_to "Edit", edit_menu_path(@menu), class: "btn-sm btn-success edit_menu_#{@menu.id}" %></td>
-			    <td><%= link_to "Destroy", menu_path(@menu), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn-sm btn-danger destroy_mane_#{@menu.id}" %></td>
+			    <td><%= link_to "編集", edit_menu_path(@menu), class: "btn-sm btn-success edit_menu_#{@menu.id}" %></td>
+			    <td><%= link_to "削除", menu_path(@menu), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn-sm btn-danger destroy_mane_#{@menu.id}" %></td>
                <% end %>
 			    </tr>
 			  </table>

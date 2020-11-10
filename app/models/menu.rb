@@ -1,6 +1,8 @@
 class Menu < ApplicationRecord
 
 	belongs_to :user
+	belongs_to :genre, optional: true
+	accepts_nested_attributes_for :genre
 	has_many :favorites
 	has_many :menu_comments, dependent: :destroy
 

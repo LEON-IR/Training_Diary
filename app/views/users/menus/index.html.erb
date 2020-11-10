@@ -19,12 +19,15 @@
   </div>
 
   <div class="col-xs-9">
+    <div class="genre-search col-xs-2">
+      <%#= render "genre_search", genres:@genres,menus: @menus %>
+    </div>
     <h2>メニュー一覧</h2>
     <table class="table table-hover table-inverse">
 
             <thead>
               <tr>
-                <th class="col-xs-1"></th>
+                <th class="col-xs-1.5">ジャンル</th>
                 <th class="col-xs-2">トレーニング種目</th>
                 <th class="col-xs-3">トレーニング内容</th>
                 <th class="col-xs-2">投稿日時</th>
@@ -36,8 +39,11 @@
             <tbody>
                 <% @menus.each do |menu| %>
                 <tr class="new table">
-                  <td><%= link_to user_path(menu.user_id) do %>
-                    <%= attachment_image_tag menu.user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg" %><% end %></td>
+                  <td>
+                    <% if menu.genre.present? %>
+                       <%= link_to menu.genre.name, menu_path(menu) %>
+                    <% end %>
+                    </td>
                   <td><span><%= link_to menu.title.truncate(8), menu, class: "menus_#{menu.id}" %></span> </td>
                   <td><span><%= menu.body.truncate(10) %></span></td>
                   <td><span><%= menu.created_at.strftime("%Y-%m-%d %H:%M") %></span></td>

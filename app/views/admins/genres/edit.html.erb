@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-xs-5 col-xs-offset-1">
+	<h1 class="page-title pick-up-title">ジャンル編集</h1>
+	  <%= render "admins/genres/error_msg", genre: @genre %>
+     <%= form_for(@genre, url: admins_genre_path(@genre)) do |f| %>
+	  <div class="box-top">
+	    <%= f.label :genre, "ジャンル"%>
+	      <%= f.text_field :name, class:"genre_new"  %>
+	      <%= f.radio_button :is_active, :true,{:checked => true} %>
+	      <%= f.label :true,"有効" %>
+	      <%= f.radio_button :is_active, :false %>
+	      <%= f.label :false,"無効" %>
+	    <span class="link-hover"><%= f.submit "追加" ,class: "btn btn-info" %></span>
+	  </div>
+	<% end %>
+
+  </div>
+</div>

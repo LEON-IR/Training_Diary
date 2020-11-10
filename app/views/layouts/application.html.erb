@@ -20,13 +20,18 @@
           </nav>
           <nav>
             <ul class="nav navbar-nav navbar-right" style="margin-top: 20px;">
-              <% if user_signed_in? %>
-                <%= render "layouts/header_login" %>
+              <% if request.url.split("/")[3] == 'admins' %>
+                  <% if admin_signed_in? %>
+                     <%= render "layouts/header_admin" %>
+                  <% else %>
+                      <%= render "layouts/header_admin_no_login" %>
+                  <% end %>
               <% else %>
-                <%# if admin_signed_in? %>
-                  <%#= render "layouts/header_admin" %>
-                <%# else %>
-                <%= render "layouts/header_no_login" %>
+                  <% if user_signed_in? %>
+                     <%= render "layouts/header_login" %>
+                  <% else %>
+                      <%= render "layouts/header_user_no_login" %>
+                  <% end %>
               <% end %>
             </ul>
           </nav>

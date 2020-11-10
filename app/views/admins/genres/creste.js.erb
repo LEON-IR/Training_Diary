@@ -1,0 +1,3 @@
+$(".genre_new").val("");
+$('.genre_index').html("<%= j(render 'admins/genres/index_genre',genres: @genres) %>");
+$('#result').html("<%= j(render 'admins/genres/error_msg' ,genre: @genre) %>");

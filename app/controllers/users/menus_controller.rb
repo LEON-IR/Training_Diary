@@ -25,7 +25,7 @@ class Users::MenusController < ApplicationController
 	end
 
 	def index
-		@menus = Menu.all.page(params[:page]).reverse_order
+		@menus = Menu.all.page(params[:page]).reverse_order.per(15)
 		@menu = Menu.new
 	end
 
@@ -36,7 +36,7 @@ class Users::MenusController < ApplicationController
 
 	def update
 		@menu = Menu.find(params[:id])
-		if@menu.update(menu_params)
+		if@menu.update(menu_params_update)
 		   flash[:success] = "メニューの更新に成功しました"
            redirect_to menu_path(@menu)
         else
@@ -57,7 +57,11 @@ class Users::MenusController < ApplicationController
 
 	private
 	def menu_params
-		params.require(:menu).permit(:title, :body, :image, :user_id)
+		params.require(:menu).permit(:title, :body, :image, :user_id, :genre_id)
+	end
+
+	def menu_params_update
+		params.require(:menu).permit(:title, :body, :image, :user_id, :genre_id)
 	end
 
 	def correct_user
@@ -65,9 +69,6 @@ class Users::MenusController < ApplicationController
 		if current_user.id != @menu.user_id
            redirect_to menus_path
        end
-    end
-
-    def search
     end
 
 end
